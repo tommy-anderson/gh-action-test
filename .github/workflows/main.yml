@@ -24,3 +24,12 @@ jobs:
           echo ""
           echo "The matrix context is:"
           echo "${{ toJson(matrix) }}"
+      - name: Success Slack notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_TITLE: 'Test 👌'
+          SLACK_ICON: https://cdn.iconscout.com/icon/free/png-64/typescript-1-1175078.png
+          SLACK_WEBHOOK: ${{ secrets.ALEX_PLANABLE_SLACK_DM_WEBHOOK }}
+          SLACK_USERNAME: TestBot
+          MSG_MINIMAL: actions url
+          SLACK_FOOTER: '' 
