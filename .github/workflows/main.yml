@@ -32,4 +32,5 @@ jobs:
           SLACK_WEBHOOK: ${{ secrets.ALEX_PLANABLE_SLACK_DM_WEBHOOK }}
           SLACK_USERNAME: TestBot
           MSG_MINIMAL: actions url
+          SLACK_MESSAGE: ${{ github.event.commits[0].message}}
           SLACK_FOOTER: '' 
