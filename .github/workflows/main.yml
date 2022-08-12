@@ -1,5 +1,8 @@
 name: Inspect Contexts
-on: [push, pull_request]
+on:
+  pull_request:
+    types:
+      - closed
 jobs:
   build:
     name: Inspect contexts
