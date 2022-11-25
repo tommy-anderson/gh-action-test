@@ -8,9 +8,14 @@ jobs:
     name: Inspect contexts
     runs-on: ubuntu-latest
     steps:
-      - name: show context
+      - name: debug
         env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
-      - name: Get Label
-        run: echo "${{ toJSON(github.event.pull_request.labels.*.name) }}"
+          NAME: ${{ toJSON(github.event_name) }}
+          ACTION: ${{ toJSON(github.event.action) }}
+          LINK: ${{ toJSON(github.event.pull_request._links.issue.href) }}
+          LABELS: ${{ fromJSON(toJSON(github.event.pull_request.labels.*.name)) }}
+        run: |
+          echo "NAME: $NAME"
+          echo "ACTION: $ACTION"
+          echo "LINK: $LINK"
+          echo "LABELS: $LABELS"
