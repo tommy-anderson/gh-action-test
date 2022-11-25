@@ -9,6 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: show context
-        run: echo ${{ toJson(github) }}
+        run: echo "${{ toJson(github) }}"
       - name: Get Label
         run: echo testing
