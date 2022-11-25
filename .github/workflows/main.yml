@@ -26,4 +26,4 @@ jobs:
           echo "${{ toJson(strategy) }}"
           echo ""
           echo "The matrix context is:"
-          echo "${{ toJson(matrix) }}"
+          echo "${{ toJson(matrix) }}"`
