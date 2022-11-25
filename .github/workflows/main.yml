@@ -13,6 +13,4 @@ jobs:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
       - name: Get Label
-        env:
-          LABELS: ${{ toJson(github.event.pull_request.labels) }}
         run: echo "${{ contains(github.event.pull_request.labels.*.name,'E2E') }}"
