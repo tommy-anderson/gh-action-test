@@ -15,8 +15,4 @@ jobs:
       - name: Get Label
         env:
           LABELS: ${{ toJson(github.event.pull_request.labels) }}
-        run: echo "$LABELS"
-      - name: Get Value
-        env:
-          VALUE: ${{ contains(github.event.pull_request.labels,'Used to run all E2E tests') }}
-        run: echo "$VALUE"
+        run: echo "${{ contains(github.event.pull_request.labels.*.name,'E2E') }}"
