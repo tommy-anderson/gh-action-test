@@ -1,8 +1,8 @@
 name: Inspect Contexts
 on:
   pull_request:
-    types:
-      - closed
+    branches:
+      - master
 jobs:
   build:
     name: Inspect contexts
