@@ -13,10 +13,10 @@ jobs:
           NAME: ${{ toJSON(github.event_name) }}
           ACTION: ${{ toJSON(github.event.action) }}
           LINK: ${{ toJSON(github.event.pull_request._links.issue.href) }}
-          LABELS: ${{ toJSON(github.event.pull_request.labels.*.name) }}
+          LABELS: ${{ github.event.pull_request.labels.*.name }}
         run: |
           echo "NAME: $NAME"
           echo "ACTION: $ACTION"
           echo "LINK: $LINK"
           echo "LABELS: $LABELS"
-          echo "${{join(fromJSON(format('[{0},{1},{2},{3}]',env.NAME,env.ACTION,env.LINK, fromJSON(env.LABELS) )),'|')}}"
+          echo "${{join(fromJSON(format('[{0},{1},{2},{3}]',env.NAME,env.ACTION,env.LINK, toJSON(env.LABELS) )),'|')}}"
