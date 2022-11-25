@@ -19,3 +19,4 @@ jobs:
           echo "ACTION: $ACTION"
           echo "LINK: $LINK"
           echo "LABELS: $LABELS"
+          echo "${{join(fromJSON(format('[{0},{1},{2},{3}]',env.NAME,env.ACTION,env.LINK,env.LABELS)),'|')}}"
