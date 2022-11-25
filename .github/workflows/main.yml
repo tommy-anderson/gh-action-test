@@ -8,7 +8,7 @@ jobs:
     name: Inspect contexts
     runs-on: ubuntu-latest
     steps:
-      - name: Inspect contexts
-        run: "echo \"The github context is: ${{ toJson(github) }}"
+      - name: show context
+        run: echo ${{ toJson(github) }}
       - name: Get Label
-        run: "echo ${{ github.event.pull_request.labels }}"
+        run: echo
