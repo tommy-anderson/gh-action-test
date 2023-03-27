@@ -19,8 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: getArray
     strategy:
-      matrix: ${{ needs.getArray.outputs.outputArr }}
+      matrix: 
+        element: ${{ needs.getArray.outputs.outputArr }}
     steps:
       - run: echo ${{ matrix.element }}
-
-# Path: .github/workflows/matrix.yml
