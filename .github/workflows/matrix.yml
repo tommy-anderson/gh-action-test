@@ -22,5 +22,5 @@ jobs:
       matrix: 
         element: ${{ fromJson(needs.getArray.outputs.outputArr) }}
     steps:
-      - name: Print ${{ matrix.element } }}
+      - name: Print ${{ matrix.element }}
         run: echo ${{ matrix.element }}
