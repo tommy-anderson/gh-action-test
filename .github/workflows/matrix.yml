@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: set-matrix
         id: set-matrix
-        uses: tommy-anderson/Output-array-action@v1.4
+        uses: tommy-anderson/Output-array-action@v1.5
 
   calculate-matrix:
     runs-on: ubuntu-latest
