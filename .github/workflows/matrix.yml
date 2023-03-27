@@ -23,3 +23,7 @@ jobs:
         element: ${{ needs.getArray.outputs.outputArr }}
     steps:
       - run: echo ${{ matrix.element }}
+
+
+
+# Path: .github/workflows/matrix.yml
