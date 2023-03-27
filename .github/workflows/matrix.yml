@@ -20,7 +20,7 @@ jobs:
     needs: getArray
     strategy:
       matrix: 
-        element: ${{ needs.getArray.outputs.outputArr }}
+        element: ${{ fromJson(needs.getArray.outputs.outputArr) }}
     steps:
       - run: echo ${{ matrix.element }}
 
