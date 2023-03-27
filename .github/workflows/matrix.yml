@@ -11,7 +11,9 @@ jobs:
     outputs:
       outputArr: ${{ steps.set-matrix.outputs.outputArr }}
     steps:
-      - uses: tommy-anderson/Output-array-action@v1.3
+      - name: set-matrix
+        id: set-matrix
+        uses: tommy-anderson/Output-array-action@v1.3
 
   calculate-matrix:
     runs-on: ubuntu-latest
@@ -19,4 +21,4 @@ jobs:
     # strategy:
     #   matrix: ${{ fromJSON(needs.getArray.outputs.outputArr) }}
     steps:
-      - run: echo ${{ fromJSON(needs.getArray.outputs.outputArr) }}
+      - run: echo ${{ needs.getArray.outputs.outputArr }}
