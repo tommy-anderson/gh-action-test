@@ -8,6 +8,8 @@ on:
 jobs:
   getArray:
     runs-on: ubuntu-latest
+    outputs:
+      outputArr: ${{ steps.set-matrix.outputs.outputArr }}
     steps:
       - uses: tommy-anderson/Output-array-action@v1.3
 
