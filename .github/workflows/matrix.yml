@@ -9,7 +9,7 @@ jobs:
   getArray:
     runs-on: ubuntu-latest
     steps:
-      - uses: tommy-anderson/Output-array-action@v.1.2
+      - uses: tommy-anderson/Output-array-action@v1.2
 
   calculate-matrix:
     runs-on: ubuntu-latest
