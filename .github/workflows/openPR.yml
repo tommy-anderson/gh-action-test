@@ -26,4 +26,3 @@ jobs:
           branch: test/update-timings
           delete-branch: true
           commit-message: 👌 Update test timings
-          token: ${{ GITHUB_TOKEN }}
