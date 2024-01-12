@@ -1,0 +1,31 @@
+name: Update Test Timings
+
+on:
+  workflow_dispatch:
+    inputs:
+      debug:
+        description: 'Debug'
+        required: false
+        default: 'false'
+
+jobs:
+  open-pr-with-updated-test-timings:
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: create some noise
+        run: date +%s > noise.txt
+      - name: Create PR
+        uses: peter-evans/create-pull-request@v5
+        with:
+          title: 👌 Update test timings
+          branch: test/update-timings
+          delete-branch: true
+          commit-message: 👌 Update test timings
+          token: ${{ secrets.GH_TOKEN }}
