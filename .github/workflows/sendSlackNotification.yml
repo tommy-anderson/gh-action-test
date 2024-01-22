@@ -1,0 +1,52 @@
+name: Update Test Timings
+
+on:
+  workflow_dispatch:
+    inputs:
+      SLACK_CHANNEL:
+        description: 'Slack Channel'
+        required: true
+        default: 'general'
+      SLACK_COLOR:
+        description: 'Slack Color'
+        required: true
+        default: 'good'
+      SLACK_ICON:
+        description: 'Slack Icon'
+        required: true
+        default: 'https://asset.brandfetch.io/idIq_kF0rb/idv3zwmSiY.jpeg'
+      SLACK_MESSAGE:
+        description: 'Slack Message'
+        required: true
+        default: 'Post Content :rocket:'
+      SLACK_TITLE:
+        description: 'Slack Title'
+        required: true
+        default: 'Post Title'
+      SLACK_USERNAME:
+        description: 'Slack Username'
+        required: true
+        default: 'Cypress Bot'
+      SLACK_WEBHOOK:
+        description: 'Slack Webhook'
+        required: true
+        default: "Testing"
+      
+
+jobs:
+  open-pr-with-updated-test-timings:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Send slack notification
+        uses: tommy-anderson/action-slack-notify@v1.0
+        env:
+          SLACK_CHANNEL: ${{ github.event.inputs.SLACK_CHANNEL }}
+          SLACK_COLOR: ${{ github.event.inputs.SLACK_COLOR }}
+          SLACK_ICON: ${{ github.event.inputs.SLACK_ICON }}
+          SLACK_MESSAGE: ${{ github.event.inputs.SLACK_MESSAGE }}
+          SLACK_TITLE: ${{ github.event.inputs.SLACK_TITLE }}
+          SLACK_USERNAME: ${{ github.event.inputs.SLACK_USERNAME }}
+          SLACK_WEBHOOK: ${{ github.event.inputs.SLACK_WEBHOOK }}
+          
