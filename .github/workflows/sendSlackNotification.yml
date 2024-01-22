@@ -6,7 +6,7 @@ on:
       SLACK_CHANNEL:
         description: 'Slack Channel'
         required: true
-        default: 'general'
+        default: 'devops'
       SLACK_COLOR:
         description: 'Slack Color'
         required: true
