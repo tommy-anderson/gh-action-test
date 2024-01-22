@@ -1,4 +1,4 @@
-name: Update Test Timings
+name: Send Slack Notifications
 
 on:
   workflow_dispatch:
@@ -49,4 +49,3 @@ jobs:
           SLACK_TITLE: ${{ github.event.inputs.SLACK_TITLE }}
           SLACK_USERNAME: ${{ github.event.inputs.SLACK_USERNAME }}
           SLACK_WEBHOOK: ${{ github.event.inputs.SLACK_WEBHOOK }}
-          
