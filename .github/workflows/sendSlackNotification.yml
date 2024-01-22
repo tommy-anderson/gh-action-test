@@ -40,7 +40,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Send slack notification
-        uses: tommy-anderson/action-slack-notify@v1.0
+        uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_CHANNEL: ${{ github.event.inputs.SLACK_CHANNEL }}
           SLACK_COLOR: ${{ github.event.inputs.SLACK_COLOR }}
