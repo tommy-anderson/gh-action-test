@@ -34,7 +34,7 @@ on:
       
 
 jobs:
-  open-pr-with-updated-test-timings:
+  send-slack-notification:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
